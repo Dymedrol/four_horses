@@ -285,6 +285,9 @@ input[type="button"] {
 html {
   overflow-x: hidden;
 }
+body {
+  font-family: 'Merriweather';
+}
 .container {
   width: 100%;
   padding: 0 20px;
@@ -311,37 +314,126 @@ html {
     width: 1720px;
   }
 }
-.awards2024__title {
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
+.header {
+  background-color: #e9ded4;
+  padding-top: 18px;
+  padding-bottom: 291px;
+  background-image: url("../img/header-back-s.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
-@media (min-width: 720px) {
-  .awards2024__title {
-    font-size: 33px;
-    line-height: 40px;
+@media (min-width: 1366px) {
+  .header {
+    padding-top: 26px;
+    padding-bottom: 132px;
+    background-image: url("../img/header-back-l.png");
   }
 }
-@media (min-width: 1024px) {
-  .awards2024__title {
-    font-size: 33px;
-    line-height: 40px;
+.logo-wrapper {
+  margin-bottom: 40px;
+}
+@media (min-width: 1366px) {
+  .logo-wrapper {
+    margin-bottom: 62px;
+  }
+}
+.logo {
+  height: 32px;
+}
+@media (min-width: 1366px) {
+  .logo {
+    margin-bottom: 36px;
   }
 }
 @media (min-width: 1366px) {
-  .awards2024__title {
-    font-size: 40px;
-    line-height: 49px;
+  .header-content {
+    width: 542px;
   }
 }
-@media (min-width: 1920px) {
-  .awards2024__title {
+.header-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #313131;
+  margin-bottom: 34px;
+}
+@media (min-width: 1366px) {
+  .header-title {
     font-size: 60px;
-    line-height: 73px;
+    line-height: 66px;
+    margin-bottom: 24px;
   }
+}
+.header-title-left {
+  text-align: left;
+}
+.header-title-center {
+  text-align: center;
+}
+.header-title-right {
+  text-align: right;
+}
+.header-subtitle {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+@media (min-width: 1366px) {
+  .header-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+@media (min-width: 1366px) {
+  .header-buttons {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+  }
+}
+.button {
+  padding: 18px 20px;
+  width: 100%;
+  border-radius: 66px;
+  background-color: #1f1f1f;
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  transition: 0.2s;
+}
+@media (min-width: 1366px) {
+  .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.button:hover {
+  background-color: #FBCE51;
+  color: #1f1f1f;
+}
+.button-white {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.button-white:hover {
+  background-color: #1f1f1f;
+  color: #FFFFFF;
 }
 
