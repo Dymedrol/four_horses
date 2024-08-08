@@ -436,4 +436,29 @@ body {
   background-color: #1f1f1f;
   color: #FFFFFF;
 }
+.marquee {
+  padding: 10px 0;
+  background-color: #F54932;
+  font-size: 0;
+}
+@media (min-width: 1366px) {
+  .marquee {
+    padding: 16px 0;
+  }
+}
+.marquee-text {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+@media (min-width: 1366px) {
+  .marquee-text {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
 
