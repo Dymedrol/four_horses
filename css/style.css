@@ -331,7 +331,7 @@ body {
   background-image: url("../img/header-back-s.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: 0;
 }
 @media (min-width: 1366px) {
   .header {
@@ -341,7 +341,7 @@ body {
   }
 }
 .logo-wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 37px;
 }
 @media (min-width: 1366px) {
   .logo-wrapper {
@@ -368,7 +368,7 @@ body {
   line-height: 40px;
   text-transform: uppercase;
   color: #313131;
-  margin-bottom: 34px;
+  margin-bottom: 23px;
 }
 @media (min-width: 1366px) {
   .header-title {
@@ -393,7 +393,7 @@ body {
   font-size: 18px;
   line-height: 23px;
   text-align: left;
-  margin-bottom: 32px;
+  margin-bottom: 31px;
 }
 @media (min-width: 1366px) {
   .header-subtitle {
@@ -414,7 +414,7 @@ body {
   }
 }
 .button {
-  padding: 18px 20px;
+  padding: 13px 20px;
   width: 100%;
   border-radius: 66px;
   background-color: #1f1f1f;
@@ -548,23 +548,34 @@ body {
     margin-bottom: 60px;
   }
 }
-.info-block2-pic {
-  margin-bottom: 24px;
+.info-block2-pic-wrapper {
+  position: relative;
+  aspect-ratio: 0.93314763;
+  margin-bottom: 65px;
 }
 @media (min-width: 1366px) {
-  .info-block2-pic {
+  .info-block2-pic-wrapper {
     margin-bottom: 0;
   }
+}
+.info-block2-pic {
+  position: absolute;
+  min-width: 112%;
+  margin: 0;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .info-table {
   border: none;
   border-collapse: collapse;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 9px;
 }
 .info-table tr {
   display: block;
-  padding-bottom: 16px;
+  padding-bottom: 2px;
   margin-bottom: 16px;
   border-bottom: 0.125rem solid #d0d0d0;
 }
@@ -572,6 +583,9 @@ body {
   .info-table tr {
     display: table-row;
   }
+}
+.info-table tr:last-of-type {
+  border-bottom: none;
 }
 @media (min-width: 1366px) {
   .info-table tr:last-of-type {
@@ -630,9 +644,15 @@ body {
   left: 0;
   background-color: #f54932;
 }
+tr.info-table-inline {
+  padding-bottom: 14px;
+}
+.info-table-inline {
+  padding-bottom: 14px;
+}
 .info-table-inline td {
   display: inline;
-  margin-right: 16px;
+  margin-right: 9px;
 }
 @media (min-width: 1366px) {
   .info-table-inline td {
