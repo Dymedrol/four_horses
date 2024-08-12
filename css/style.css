@@ -668,7 +668,7 @@ tr.info-table-inline {
   color: #3057A2;
 }
 .stages {
-  margin-bottom: 120px;
+  margin-bottom: 114px;
 }
 @media (min-width: 1366px) {
   .stages {
@@ -709,6 +709,37 @@ tr.info-table-inline {
     left: 311px;
   }
 }
+.slider {
+  position: relative;
+}
+.slider-wrapper {
+  overflow-x: clip;
+  position: relative;
+  width: 335px;
+  z-index: 1;
+  margin: 0 auto;
+}
+.slides {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 10000px;
+}
+.slides.shifting {
+  transition: left 0.2s ease-out;
+}
+.slide {
+  width: 335px;
+  height: 300px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+  border-radius: 2px;
+}
 @media (min-width: 1366px) {
   .stages-content {
     display: grid;
@@ -719,6 +750,7 @@ tr.info-table-inline {
   }
 }
 .stages-items {
+  position: relative;
   padding: 62px 20px 10px 0;
   background-image: url("../img/stages-item-back.png");
   background-size: cover;
@@ -814,6 +846,50 @@ tr.info-table-inline {
     padding-right: 290px;
   }
 }
+.stages-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+}
+.stages-controls button {
+  border: 0;
+  background-color: transparent;
+}
+.stages-controls button:disabled circle {
+  fill: #D6D6D6;
+  pointer-events: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .stages-controls-button:hover circle {
+    fill: #FBCE51;
+  }
+}
+.stages-controls-dots {
+  display: flex;
+  gap: 6px;
+}
+.stages-controls-dot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #D9D9D9;
+}
+.stages-controls-dot.active {
+  background-color: #313131;
+}
+.stages-mobile-plane {
+  display: block;
+  position: absolute;
+  top: -129px;
+  right: 0;
+}
+@media (min-width: 1366px) {
+  .stages-mobile-plane {
+    display: none;
+  }
+}
 .stages-desktop-plane {
   display: none;
 }
@@ -826,7 +902,7 @@ tr.info-table-inline {
   }
 }
 .participants {
-  margin-bottom: 100px;
+  margin-bottom: 176px;
 }
 @media (min-width: 1366px) {
   .participants {
@@ -879,10 +955,10 @@ tr.info-table-inline {
   line-height: 24px;
   color: #313131;
   opacity: 0.6;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .participants-item-more {
-  padding: 12px;
+  padding: 7px 12px;
   border: 1px solid #3057A2;
   border-radius: 62px;
   font-family: 'Golos Text';
@@ -891,6 +967,10 @@ tr.info-table-inline {
   font-size: 16px;
   line-height: 19px;
   color: #3057A2;
+}
+.participants-item-more:hover {
+  background-color: #3057A2;
+  color: #fff;
 }
 .footer {
   background-color: #e9ded4;
