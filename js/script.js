@@ -76,6 +76,7 @@ window.addEventListener("load", function(event) {
     }
 
     if (windowWidth < 1366) {
+        console.log('!!')
         stageSlider(stageSliderWrapper, stageSliderItems, stagePrev, stageNext, stageDots);
     }
 
@@ -114,6 +115,8 @@ window.addEventListener("load", function(event) {
         prev.addEventListener('click', function () { shiftSlide(-1) });
         next.addEventListener('click', function () { shiftSlide(1) });
         items.addEventListener('transitionend', checkIndex);
+
+        setInterval(function () { shiftSlide(1)}, 4000)
         function shiftSlide(dir, action) {
             items.classList.add('shifting');
 
