@@ -1,4 +1,6 @@
 window.addEventListener("load", function(event) {
+
+    let windowWidth = window.innerWidth
     const stageSliderWrapper = document.getElementById('stage-slider');
     const stageSliderItems = document.getElementById('stage-slides');
     const stagePrev = document.getElementById('stage-prev');
@@ -6,7 +8,7 @@ window.addEventListener("load", function(event) {
     const stageDots = document.getElementById('stage-dots');
 
     function stageSlider(wrapper, items, prev, next, dotsWrapper) {
-        var
+        let
             posInitial,
             slides = items.getElementsByClassName('slide'),
             slidesLength = slides.length,
@@ -73,33 +75,20 @@ window.addEventListener("load", function(event) {
         }
     }
 
-    stageSlider(stageSliderWrapper, stageSliderItems, stagePrev, stageNext, stageDots);
+    if (windowWidth < 1366) {
+        stageSlider(stageSliderWrapper, stageSliderItems, stagePrev, stageNext, stageDots);
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    var slider = document.getElementById('participants-slider'),
-        sliderItems = document.getElementById('participants-slides'),
-        prev = document.getElementById('participants-prev'),
-        next = document.getElementById('participants-next');
+    const slider = document.getElementById('participants-slider');
+    const sliderItems = document.getElementById('participants-slides');
+    const prev = document.getElementById('participants-prev');
+    const next = document.getElementById('participants-next');
 
     const participantsCounter = document.getElementById('participants-counter');
 
-    function slide(wrapper, items, prev, next) {
-        var posInitial,
+    function participantsSlider(wrapper, items, prev, next) {
+        let posInitial,
             slides = items.getElementsByClassName('slide'),
             slidesLength = slides.length,
             slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
@@ -110,25 +99,21 @@ window.addEventListener("load", function(event) {
             index = 0,
             allowShift = true;
 
-        // Clone first and last slide
         items.appendChild(cloneFirst);
         items.insertBefore(cloneLast, firstSlide);
+
+        if (windowWidth >= 1366) {
+            items.appendChild(slides[1].cloneNode(true));
+        }
+
         wrapper.classList.add('loaded');
         document.getElementById('participants-total').textContent = slidesLength;
         const  counter = document.getElementById('participants-count');
         counter.textContent = 1;
 
-
-        setInterval(function() {shiftSlide(1)}, 4000);
-
-
-        // Click events
         prev.addEventListener('click', function () { shiftSlide(-1) });
         next.addEventListener('click', function () { shiftSlide(1) });
-
-        // Transition events
         items.addEventListener('transitionend', checkIndex);
-
         function shiftSlide(dir, action) {
             items.classList.add('shifting');
 
@@ -166,5 +151,6 @@ window.addEventListener("load", function(event) {
         }
     }
 
-    slide(slider, sliderItems, prev, next);
+    participantsSlider(slider, sliderItems, prev, next);
+
 });

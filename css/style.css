@@ -735,46 +735,50 @@ tr.info-table-inline {
   .stages-subtitle {
     position: absolute;
     width: 280px;
-    bottom: 7px;
-    left: 311px;
+    bottom: 10px;
+    left: 303px;
+    font-size: 20px;
+    line-height: 120%;
   }
 }
-.stages .slider {
-  position: relative;
-}
-.stages .slider-wrapper {
-  overflow-x: clip;
-  position: relative;
-  width: 335px;
-  z-index: 1;
-  margin: 0 auto;
-}
-.stages .slides {
-  display: flex;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 10000px;
-}
-.stages .slides.shifting {
-  transition: left 0.2s ease-out;
-}
-.stages .slide {
-  width: 335px;
-  height: 300px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 1s;
-  position: relative;
-  border-radius: 2px;
+@media mobile-only {
+  .stages .slider {
+    position: relative;
+  }
+  .stages .slider-wrapper {
+    overflow-x: clip;
+    position: relative;
+    width: 335px;
+    z-index: 1;
+    margin: 0 auto;
+  }
+  .stages .slides {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10000px;
+  }
+  .stages .slides.shifting {
+    transition: left 0.2s ease-out;
+  }
+  .stages .slide {
+    width: 335px;
+    height: 300px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+    position: relative;
+    border-radius: 2px;
+  }
 }
 @media (min-width: 1366px) {
   .stages-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr) 136px;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
@@ -801,8 +805,9 @@ tr.info-table-inline {
 @media (min-width: 1366px) {
   .stages-item {
     margin-bottom: 0;
-    padding: 20px 20px 20px 72px;
+    padding: 20px 21px 20px 72px;
     background-image: url("../img/stages-item-back.png");
+    background-size: cover;
     max-width: 394px;
     width: 100%;
   }
@@ -883,6 +888,11 @@ tr.info-table-inline {
   justify-content: center;
   margin-top: 28px;
 }
+@media (min-width: 1366px) {
+  .stages-controls {
+    display: none;
+  }
+}
 .stages-controls button {
   border: 0;
   background-color: transparent;
@@ -927,8 +937,8 @@ tr.info-table-inline {
   .stages-desktop-plane {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -97px;
+    right: -64px;
   }
 }
 .participants {
@@ -944,6 +954,12 @@ tr.info-table-inline {
   width: 335px;
   height: 388px;
 }
+@media (min-width: 1366px) {
+  .participants .slider {
+    width: 1222px;
+    height: 462px;
+  }
+}
 .participants .wrapper {
   overflow: hidden;
   position: relative;
@@ -951,12 +967,23 @@ tr.info-table-inline {
   height: 388px;
   z-index: 1;
 }
+@media (min-width: 1366px) {
+  .participants .wrapper {
+    width: 1222px;
+    height: 462px;
+  }
+}
 .participants .slides {
   display: flex;
   position: relative;
   top: 0;
   left: -335px;
   width: 10000px;
+}
+@media (min-width: 1366px) {
+  .participants .slides {
+    left: -423px;
+  }
 }
 .participants .slides.shifting {
   transition: left 0.2s ease-out;
@@ -967,35 +994,12 @@ tr.info-table-inline {
   cursor: pointer;
   transition: all 1s;
 }
-.participants .control {
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  border-radius: 50px;
-  margin-top: -20px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-}
-.participants.prev,
-.participants .next {
-  background-size: 22px;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.participants .prev {
-  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
-  left: -20px;
-}
-.participants .next {
-  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
-  right: -20px;
-}
-.participants .prev:active,
-.participants .next:active {
-  transform: scale(0.8);
+@media (min-width: 1366px) {
+  .participants .slide {
+    width: 414px;
+    height: 462px;
+    padding: 0 10px;
+  }
 }
 .participants-title {
   margin-bottom: 40px;
@@ -1006,22 +1010,13 @@ tr.info-table-inline {
   }
 }
 .participants-slider {
-  width: 335px;
   margin: 0 auto;
   overflow-x: clip;
-}
-.participants-content {
-  display: flex;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 10000px;
 }
 .participants-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 335px;
 }
 .participants-item-photo {
   width: 244px;
@@ -1080,6 +1075,14 @@ tr.info-table-inline {
   justify-content: center;
   margin-top: 28px;
 }
+@media (min-width: 1366px) {
+  .participants-controls {
+    position: absolute;
+    top: -145px;
+    left: 1080px;
+    gap: 7px;
+  }
+}
 .participants-controls button {
   border: 0;
   background-color: transparent;
@@ -1100,6 +1103,7 @@ tr.info-table-inline {
   font-size: 16px;
   line-height: 19px;
   color: #313131;
+  flex-shrink: 0;
 }
 .participants-controls-numers #participants-total {
   color: #313131;
@@ -1110,7 +1114,7 @@ tr.info-table-inline {
 }
 @media (min-width: 1366px) {
   .footer {
-    padding: 40px 72px;
+    padding: 45px 65px 85px;
   }
 }
 .footer-text {
